@@ -94,7 +94,7 @@ public class SOAPClient {
 		SOAPPart soapPart = soapMessage.getSOAPPart();
 		// *********** These two lines will be configured from testng.xml at later stage ********** //
          myNamespace = "web";
-         myNamespaceURI = "http://realpage.com/webservices";
+         myNamespaceURI = "http://xyz.com/webservices";
         // **************************************************************************************** //
 
         // SOAP Envelope

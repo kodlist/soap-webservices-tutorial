@@ -1,0 +1,391 @@
+1) var, let, const
+Some examples of legal names are Number_hits, temp99, $credit, and _name
+
+
+
+2)An alternative method of retrieving a number from a string is with the + (unary plus) operator: 
+ex: '1.1' + '1.1' // '1.11.1'
+ex: (+'1.1') + (+'1.1') // 2.2   
+
+3) var myList = ['home', , 'school', , ];  the length of the array is four, and myList[1] and myList[3] are missing. Only the last comma is ignored.
+when writing your own code, explicitly declare the missing elements as undefined, as doing this increases your code's clarity and maintainability.
+
+4) var a =20; console.log(typeOf a)  it prints number
+
+5)opeartors: === , !==, * ,+, -
+
+6) == will result in true. ex: var a =10, var b ="string"  ; if( a== b) {it enter if condition}.
+   it is because js converts one of the var to a string.
+
+ 7) var a = 10 ; if(a){console.log("equal")} --- it is true.
+    var a = 0; if(a){console.log("equal")} --- it is false.
+	 var a =""; if(a){console.log("equal")} --- it is false.
+	  var a = -22; if(a){console.log("equal")} --- it is true. 
+	  in js all var with values is true, if var is zero, undefined or "" then it is false. values of all types have an associated boolean values.
+	  
+	The following values evaluate to false (also known as Falsy values):
+
+false
+undefined
+null
+0
+NaN
+the empty string ("")
+	  
+
+All other values, including all objects, evaluate to true when passed to a conditional statement.
+Do not confuse the primitive boolean values true and false with the true and false values of the Boolean object. For example:
+var b = new Boolean(false);
+if (b) // this condition evaluates to true
+if (b == true) // this condition evaluates to false
+
+8)js is object oriented just as java, but it is not class based programming language. You can create objects without classes.
+
+
+9) Literals
+
+Array literals  :var myList = [ ,'home', , 'school'];
+Boolean literals : The Boolean type has two literal values: true and false.
+Floating-point literals : ex: 3.1415926, -.123456789, -3.1E+12
+Integers : Integers can be expressed in decimal (base 10), hexadecimal (base 16), octal (base 8) and binary (base 2).
+Object literals
+RegExp literals
+String literals : A string literal is zero or more characters enclosed in double (") or single (') quotation marks.
+
+9) Object literals
+
+ex: 1 =============================
+var sales = 'Toyota';
+
+function carTypes(name) {
+  if (name === 'Honda') {
+    return name;
+  } else {
+    return "Sorry, we don't sell " + name + ".";
+  }
+}
+
+var car = { myCar: 'Saturn', getCar: carTypes('Honda'), special: sales };
+
+console.log(car.myCar);   // Saturn
+console.log(car.getCar);  // Honda
+console.log(car.special); // Toyota
+
+var car = { manyCars: {a: 'Saab', b: 'Jeep'}, 7: 'Mazda' };
+
+console.log(car.manyCars.b); // Jeep
+console.log(car[7]); // Mazda
+=======================================
+
+ex 2:
+var foo = {a: 'alpha', 2: 'two'};
+console.log(foo.a);    // alpha
+console.log(foo[2]);   // two
+//console.log(foo.2);  // Error: missing ) after argument list
+//console.log(foo[a]); // Error: a is not defined
+console.log(foo['a']); // alpha
+console.log(foo['2']); // two
+
+=======================================
+
+9) objects that doesn't have defined props and try to access will give undefined.
+
+10) 
+   var myObj = {};
+   console.log(myObj);
+   myObj.prop = "hello";
+   console.log(myObj);
+ 
+11) Exception handling statements
+
+
+12) Difference between dot and bracket notations
+var myObj ={ "prop" ="hello", "1":"one"}
+
+myObj.1 throws SyntaxError
+but
+myObj.prop is good
+
+when you property name with number in object then you can only access using [] notation. or else the properties can be
+accessed using myObj.prop or myObj.['prop']
+
+in cases of invalid identfier can be accessed using [] bracket. and also when the object properties are dynamic.
+
+ex: 
+
+var myObj{
+	"prop" : "hello",	
+	"prop1" : 123;
+}
+var propertyName ="prop1" ;
+console.log(myObj[propertyName] )    //this prints 123. if it is not definied it returns undefined.
+
+javascript engine makes things optimsed when we use dot . notation. when you have square bracket notation then js doesnt
+do optimisation bcz js had to wait for one or code to run. 
+
+13) Nested objects
+
+var myObj{
+	"prop" : "hello",	
+	"prop1" : 123;
+	"objprop": {
+		"innerProp" : "Inner property"
+		}
+};
+
+console.log(myObj.objprop);
+console.log(myObj.objprop.innerProp);
+myObj.objprop.newInner ="new inner value";
+
+console.log(myObj);
+
+
+
+14) Arrays
+
+var myarry=["a", "b"]
+myarry[0] or myarry["0"] because propertynames are numbers. js converts 0 to string. for numbers you have to use square brackets
+not the dot "." operator to access.
+
+
+15) primitive's in javascript have equaivalent objects. 
+
+when you give var greeting = "heelo", here js gets the greeting string primitive and converts to object.hence we can
+use methods like length. 
+
+16) Functions
+
+ex1:
+function sayHello(name, timeOfDay)
+{
+  console.log('hello '+ name + "  "+ timeOfDay)
+}
+sayHello("mehar"); /// the second argument is not passed. in JS we get undefined.
+
+ex2:
+function sayHello(name, timeOfDay)
+{
+  console.log('hello '+ name + "  "+ timeOfDay)
+}
+sayHello("mehar","ggg", 42); // the remaining are more then extra arguments are ignored.
+
+17) overloadded functions are not possible in JS.
+ex: add(a,b)
+ not possible to have add(a,b,c)
+ ex: 
+  in here two functions with same name (overload) , only first one is picked by js.
+  
+ function sayHello(name, timeOfDay)
+{
+  console.log('hello '+ name + "  "+ timeOfDay)
+}
+
+function sayHello(name, timeOfDay,l)
+{
+  console.log('hello '+ name + "  "+ timeOfDay)
+}
+sayHello("a","d",1);
+
+
+15) functions
+
+var f = function foo(){
+  console.log("hello");
+};  // here the function itself assigned to f.
+ and if call f as shown below then hello gets printed.
+ f();
+ 
+ 
+ 16) Function declaration versus Function expression
+ 
+ function foo(){
+  console.log("");
+ }
+ 
+ var f = function foo(){     //Function expression
+  console.log("");
+ };
+ 
+ var f = function() {       // anonymous Function expression, you will remove name of the function.
+ console.log("");
+ };
+ 
+ 
+ 17) function as argument. see below ex
+ 
+ var f = function (name)
+ {
+	console.log("hello "+name);
+ }
+ 
+ var executor = function(fn, name)
+ {
+	fn(name);
+ }
+ 
+ executor(f, "mehar");
+ 
+ 18) Functions on objects
+ 
+	var myObj = {
+		"testProp" : true
+	};
+   
+	myObj.myMethod = function()   {   
+		console.log("function in object");
+	};
+   
+	myObj.myMethod() ;
+	myObj.testProp; 
+	console.log(myObj.testProp);
+ 
+ 
+ 
+ 19) this keyword
+ 
+ 
+ ex:
+ 
+ var person = {
+   "firstname" : "mehar",
+   "lastname" : "ko",
+   
+   "getFullName" : function() {
+      return person.firstname + " "+ person.lastname;
+   }
+   
+};
+
+
+var fullName = person.getFullName();
+
+console.log(fullName);
+
+var person2 = person;
+person = {};
+
+console.log(person2.getFullName()) // it prints undefined  undefined for both firstname and lastname
+
+
+// instead you use "this" keyword
+
+var person = {
+   "firstname" : "mehar",
+   "lastname" : "ko",
+   
+   "getFullName" : function() {
+      return this.firstname + " "+ this.lastname;
+   }
+   
+};
+
+
+var fullName = person.getFullName();
+
+console.log(fullName);
+
+var person2 = person;
+person = {};
+
+console.log(person2.getFullName())
+
+// now, this code prints firstname and lastname
+
+
+
+================
+ex:
+
+var person = {
+   "firstname" : "mehar",
+   "lastname" : "koduri",
+   
+   "getFullName" : function() {
+      return this.firstname + " "+ this.lastname;
+   },
+  "address": {
+    "street":"123 js treet",
+      "city" :"js",
+        "state": "ca"
+  },
+  "isFromState" : function(s) { 
+    if(this.address.state === s)  //  you can also just keep one line : return if((this.address.state === s) 
+    { 
+      return true;
+    }else{
+        return false;
+    }
+  }
+   
+};
+
+console.log(person.isFromState("ca"));
+
+
+================
+
+17) arguments default from js
+
+var add = function(a, b)
+{
+	console.log(arguments); //it prints all the arg's passed to function.
+	retunr a+b;
+}
+
+console.log(add(10,20));  // you can see arguments as 0:10, 1:20
+
+even if you pass extra args js will still excute and return sum of arg's, and also the arguments will be there, but it
+won't be used. js kinds ignores them.
+
+
+
+17) Exceptions
+
+// Create an object type UserException
+function UserException(message) {
+  this.message = message;
+  this.name = 'UserException';
+}
+
+// Make the exception convert to a pretty string when used as a string 
+// (e.g. by the error console)
+UserException.prototype.toString = function() {
+  return this.name + ': "' + this.message + '"';
+}
+
+// Create an instance of the object type and throw it
+throw new UserException('Value too high');
+/*
+Exception: UserException: "Value too high"
+*/
+
+ 
+ 
+ 18) For ... in
+ 
+ var obj = {a:1, b:2, c:3};
+ 
+	for (var prop in obj) {
+		console.log("obj." + prop + " = " + obj[prop]);
+	}
+	
+
+The following example shows the difference between a for...of loop and a for...in loop. 
+While for...in iterates over property names, for...of iterates over property values:
+
+var arr = [3, 5, 7];
+arr.foo = 'hello';
+
+for (var i in arr) {
+   console.log(i); // logs "0", "1", "2", "foo"
+}
+
+for (var i of arr) {
+   console.log(i); // logs 3, 5, 7
+}
+
+
+The for...of statement creates a loop Iterating over iterable objects (including Array, Map, Set, arguments object and so on)
+
+
+ 
